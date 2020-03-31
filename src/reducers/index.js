@@ -58,10 +58,7 @@ export function reducer(state, action) {
           ? "operator"
           : "left";
       const value = state[targetC];
-      const nextValue =
-        value[value.length - 2] === "."
-          ? value.slice(0, value.length - 2)
-          : value.slice(0, value.length - 1);
+      const nextValue = value.slice(0, value.length - 1);
       return { ...state, [targetC]: nextValue };
 
     case CALCULATE:
