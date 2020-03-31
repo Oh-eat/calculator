@@ -13,19 +13,20 @@ const NumberBlock = styled.div`
   justify-items: center;
 `;
 
-function Number({ area }) {
+function Number({ area, handleNumberClick, handleDotClick }) {
   return (
     <NumberBlock area={area}>
-      <Button text="7" />
-      <Button text="8" />
-      <Button text="9" />
-      <Button text="4" />
-      <Button text="5" />
-      <Button text="6" />
-      <Button text="1" />
-      <Button text="2" />
-      <Button text="3" />
-      <Button text="0" area="4/1/4/4" />
+      {[7, 8, 9, 4, 5, 6, 1, 2, 3]
+        .map(number => `${number}`)
+        .map(number => (
+          <Button
+            key={number}
+            text={number}
+            onClick={() => handleNumberClick(number)}
+          />
+        ))}
+      <Button text="0" area="4/1/4/3" onClick={() => handleNumberClick(0)} />
+      <Button text="." onClick={handleDotClick} />
     </NumberBlock>
   );
 }

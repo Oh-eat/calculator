@@ -3,6 +3,7 @@ import {
   reducer,
   initialState,
   addNumber,
+  addDot,
   setOperator,
   backspace,
   initialize,
@@ -16,6 +17,7 @@ export default function useHook() {
     number => dispatch(addNumber(number)),
     []
   );
+  const handleDotClick = useCallback(() => dispatch(addDot()), []);
   const handleOperatorClick = useCallback(
     operator => dispatch(setOperator(operator)),
     []
@@ -26,6 +28,7 @@ export default function useHook() {
   return [
     state,
     handleNumberClick,
+    handleDotClick,
     handleOperatorClick,
     handleBackClick,
     handleClearClick,

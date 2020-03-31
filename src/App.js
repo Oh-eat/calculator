@@ -13,6 +13,7 @@ function App() {
   const [
     state,
     handleNumberClick,
+    handleDotClick,
     handleOperatorClick,
     handleBackClick,
     handleClearClick,
@@ -24,6 +25,7 @@ function App() {
       <Display state={state} />
       <Pad
         handleNumberClick={handleNumberClick}
+        handleDotClick={handleDotClick}
         handleOperatorClick={handleOperatorClick}
         handleBackClick={handleBackClick}
         handleClearClick={handleClearClick}

@@ -21,7 +21,11 @@ const ButtonBlock = styled.div`
 `;
 
 function Button({ area, text, onClick }) {
-  return <ButtonBlock area={area}>{text}</ButtonBlock>;
+  return (
+    <ButtonBlock onClick={onClick} area={area}>
+      {text}
+    </ButtonBlock>
+  );
 }
 
 export default Button;

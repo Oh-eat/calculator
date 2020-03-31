@@ -19,17 +19,32 @@ const PadBlock = styled.div`
   justify-items: center;
 `;
 
-function Pad() {
+function Pad({
+  handleNumberClick,
+  handleDotClick,
+  handleOperatorClick,
+  handleBackClick,
+  handleClearClick,
+  handleCalculateClick
+}) {
   return (
     <PadBlock>
-      <Button text="+" area="plus" />
-      <Button text="-" area="minus" />
-      <Button text="×" area="multiple" />
-      <Button text="%" area="divide" />
-      <Number area="number" />
-      <Button text="←" area="back" />
-      <Button text="C" area="clear" />
-      <Button text="=" area="equal" />
+      <Button text="+" area="plus" onClick={() => handleOperatorClick("+")} />
+      <Button text="-" area="minus" onClick={() => handleOperatorClick("-")} />
+      <Button
+        text="*"
+        area="multiple"
+        onClick={() => handleOperatorClick("*")}
+      />
+      <Button text="/" area="divide" onClick={() => handleOperatorClick("/")} />
+      <Number
+        area="number"
+        handleNumberClick={handleNumberClick}
+        handleDotClick={handleDotClick}
+      />
+      <Button text="←" area="back" onClick={handleBackClick} />
+      <Button text="C" area="clear" onClick={handleClearClick} />
+      <Button text="=" area="equal" onClick={handleCalculateClick} />
     </PadBlock>
   );
 }

@@ -9,7 +9,8 @@ const PresentBlock = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
+  overflow: hidden;
 `;
 
 function Present({ left, operator, right, error }) {
