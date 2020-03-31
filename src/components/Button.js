@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const ButtonBlock = styled.div`
   grid-area: ${props => props.area};
+  user-select: none;
   width: 100%;
   height: 100%;
   display: flex;
@@ -14,7 +15,7 @@ const ButtonBlock = styled.div`
   transition: all 0.25s;
 
   &:hover {
-    background: white;
+    background: rgb(236, 236, 236);
     color: black;
   }
 `;

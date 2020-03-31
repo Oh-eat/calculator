@@ -12,8 +12,16 @@ const PresentBlock = styled.div`
   font-size: 1.75rem;
 `;
 
-function Present(props) {
-  return <PresentBlock>계산될 값</PresentBlock>;
+function Present({ left, operator, right, error }) {
+  return (
+    <PresentBlock>
+      {error && error}
+      {!error &&
+        `${left}${operator === "" ? "" : ` ${operator}`}${
+          right === "" ? "" : ` ${right}`
+        }`}
+    </PresentBlock>
+  );
 }
 
 export default Present;

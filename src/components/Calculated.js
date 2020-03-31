@@ -11,8 +11,8 @@ const CalculatedBlock = styled.div`
   justify-content: flex-end;
 `;
 
-function Calculated(props) {
-  return <CalculatedBlock>계산된 값</CalculatedBlock>;
+function Calculated({ calculated, error }) {
+  return <CalculatedBlock>{!error && calculated}</CalculatedBlock>;
 }
 
 export default Calculated;

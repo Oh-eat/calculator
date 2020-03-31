@@ -14,11 +14,12 @@ const DisplayBlock = styled.div`
   color: white;
 `;
 
-function Display() {
+function Display({ state }) {
+  const { left, operator, right, calculated, error } = state;
   return (
     <DisplayBlock>
-      <Present />
-      <Calculated />
+      <Present left={left} operator={operator} right={right} error={error} />
+      <Calculated calculated={calculated} error={error} />
     </DisplayBlock>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Display from "./components/Display";
 import Pad from "./components/Pad";
+import useHook from "./components/hooks/useHook";
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,10 +10,25 @@ const Wrapper = styled.div`
 `;
 
 function App() {
+  const [
+    state,
+    handleNumberClick,
+    handleOperatorClick,
+    handleBackClick,
+    handleClearClick,
+    handleCalculateClick
+  ] = useHook();
+
   return (
     <Wrapper>
-      <Display />
-      <Pad />
+      <Display state={state} />
+      <Pad
+        handleNumberClick={handleNumberClick}
+        handleOperatorClick={handleOperatorClick}
+        handleBackClick={handleBackClick}
+        handleClearClick={handleClearClick}
+        handleCalculateClick={handleCalculateClick}
+      />
     </Wrapper>
   );
 }
